@@ -7,6 +7,9 @@ USER root
 # Install Docker CLI and ffmpeg
 RUN apk add --no-cache docker-cli ffmpeg fprobe
 
+# Install fluent-ffmpeg globally
+RUN npm install -g fluent-ffmpeg child_process
+
 # Create the docker group if it does not exist and add the 'node' user to it
 RUN addgroup -S docker || true
 RUN addgroup node docker
